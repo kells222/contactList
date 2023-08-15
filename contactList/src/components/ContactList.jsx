@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ContactRow from "./ContactRow";
 
 
@@ -27,9 +26,10 @@ const dummyContacts = [
             }
         }
         fetchContacts();
-    },[])
+    },[contacts])
+    
     // console.log("Contacts:", contacts)
-    // console.log(props)
+
     
     return(
     
@@ -48,9 +48,9 @@ const dummyContacts = [
                 {
                     contacts.map((contact)=>{
                         return<>
-                        <ContactRow key={contact.id} contact={contact}/>
-                        {/* <div>{contact.name}:{contact.email}:{contact.phone}</div> */}
+                        <ContactRow  key={contact.id} contact={contact}/>
                         </>
+                        {/* <div>{contact.name}:{contact.email}:{contact.phone}</div> */}
                     }
                         )
                 }
