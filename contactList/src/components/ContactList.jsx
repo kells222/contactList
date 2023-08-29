@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContactRow from "./ContactRow";
-import SelectedContact from "./SelectedContact";
+// import SelectedContact from "./SelectedContact";
 
 
 // const dummyContacts = [

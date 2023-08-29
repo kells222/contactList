@@ -2,14 +2,14 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 
 
-function SelectedContact({setSelectedContactId}) {
+function SelectedContact({setSelectedContactId, selectedContactId}) {
 // const [selectedContactId, setSelectedContactId] = useState(null)
 const [contact,setContact] = useState('')
-
+console.log(selectedContactId)
   useEffect (()=>{
-    async function fetchSelectedContact (){
+    async function fetchSelectedContact(){
       try {
-        const response = await fetch (`http://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/1`);
+        const response = await fetch (`http://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}`);
         const result = await response.json();
         setContact(result);
         
@@ -18,9 +18,8 @@ const [contact,setContact] = useState('')
       }
     }
     fetchSelectedContact();
-  },[setSelectedContactId])
-
-  
+    
+  },[setSelectedContactId, selectedContactId])
   return (
     <>
     <div>
